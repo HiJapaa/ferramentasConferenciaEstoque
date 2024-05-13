@@ -385,27 +385,9 @@ function App() {
   let feitas = []
 
   function fizeram() {
-    if (categoria == 'Diversos') {
+    if (categoria == 'Outros') {
       relatorios.forEach(e => {
-        if (e.categoria == 'Diversos') {
-          let achou = lojas.find(element => element === e.loja)
-          feitas.push(achou)
-        }
-      })
-      console.log(feitas)
-      setFaltantes(lojas.filter(a => !feitas.includes(a)))
-    } else if (categoria == 'Chips') {
-      relatorios.forEach(e => {
-        if (e.categoria == 'Chips') {
-          let achou = lojas.find(element => element === e.loja)
-          feitas.push(achou)
-        }
-      })
-      console.log(feitas)
-      setFaltantes(lojas.filter(a => !feitas.includes(a)))
-    } else if (categoria == 'ProdutosVivo') {
-      relatorios.forEach(e => {
-        if (e.categoria == 'ProdutosVivo') {
+        if (e.categoria == 'Outros') {
           let achou = lojas.find(element => element === e.loja)
           feitas.push(achou)
         }
@@ -459,72 +441,6 @@ function App() {
   let confresaDataConf = []
   let xavantinaDataConf = []
 
-  let lucasChipsConf = []
-  let filintoChipsConf = []
-  let roiChipsConf = []
-  let caceresChipsConf = []
-  let sorrisoChipsConf = []
-  let estoqueAdmChipsConf = []
-  let vgShoppingChipsConf = []
-  let barraChipsConf = []
-  let coutoChipsConf = []
-  let primaveraChipsConf = []
-  let pontesChipsConf = []
-  let coliderChipsConf = []
-  let mirassolChipsConf = []
-  let guarantaChipsConf = []
-  let jaciaraChipsConf = []
-  let comodoroChipsConf = []
-  let altoAraguaiaChipsConf = []
-  let ariquemesChipsConf = []
-  let estoqueRoChipsConf = []
-  let querenciaChipsConf = []
-  let jaruChipsConf = []
-  let jiParanaChipsConf = []
-  let peixotoChipsConf = []
-  let rolimChipsConf = []
-  let pimentaChipsConf = []
-  let vilhenaChipsConf = []
-  let cacoalChipsConf = []
-  let setembroChipsConf = []
-  let jatuaranaChipsConf = []
-  let joseChipsConf = []
-  let confresaChipsConf = []
-  let xavantinaChipsConf = []
-
-  let lucasProdutosVivoConf = []
-  let filintoProdutosVivoConf = []
-  let roiProdutosVivoConf = []
-  let caceresProdutosVivoConf = []
-  let sorrisoProdutosVivoConf = []
-  let estoqueAdmProdutosVivoConf = []
-  let vgShoppingProdutosVivoConf = []
-  let barraProdutosVivoConf = []
-  let coutoProdutosVivoConf = []
-  let primaveraProdutosVivoConf = []
-  let pontesProdutosVivoConf = []
-  let coliderProdutosVivoConf = []
-  let mirassolProdutosVivoConf = []
-  let guarantaProdutosVivoConf = []
-  let jaciaraProdutosVivoConf = []
-  let comodoroProdutosVivoConf = []
-  let altoAraguaiaProdutosVivoConf = []
-  let ariquemesProdutosVivoConf = []
-  let estoqueRoProdutosVivoConf = []
-  let querenciaProdutosVivoConf = []
-  let jaruProdutosVivoConf = []
-  let jiParanaProdutosVivoConf = []
-  let peixotoProdutosVivoConf = []
-  let rolimProdutosVivoConf = []
-  let pimentaProdutosVivoConf = []
-  let vilhenaProdutosVivoConf = []
-  let cacoalProdutosVivoConf = []
-  let setembroProdutosVivoConf = []
-  let jatuaranaProdutosVivoConf = []
-  let joseProdutosVivoConf = []
-  let confresaProdutosVivoConf = []
-  let xavantinaProdutosVivoConf = []
-
   let lucasAcessoriosConf = []
   let filintoAcessoriosConf = []
   let roiAcessoriosConf = []
@@ -558,13 +474,9 @@ function App() {
   let confresaAcessoriosConf = []
   let xavantinaAcessoriosConf = []
 
-  function pshConf(dataConf, chipsConf, produtosVivoConf, acessoriosConf, e) {
-    if (e.categoria == 'Diversos') {
+  function pshConf(dataConf, acessoriosConf, e) {
+    if (e.categoria == 'Outros') {
       dataConf.push(e.text)
-    } else if (e.categoria == 'Chips') {
-      chipsConf.push(e.text)
-    } else if (e.categoria == 'ProdutosVivo') {
-      produtosVivoConf.push(e.text)
     } else if (e.categoria == 'Acessorios') {
       acessoriosConf.push(e.text)
     }
@@ -573,419 +485,131 @@ function App() {
   function conferencias() {
     relatorios.forEach(e => {
       if (e.loja == 'MS LUCAS') {
-        pshConf(lucasDataConf, lucasChipsConf, lucasProdutosVivoConf, lucasAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   lucasDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   lucasChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   lucasProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   lucasAcessoriosConf.push(e.text)
-        // }
+        pshConf(lucasDataConf, lucasAcessoriosConf, e)
       }
 
       if (e.loja == 'MS FILINTO') {
-        pshConf(filintoDataConf, filintoChipsConf, filintoProdutosVivoConf, filintoAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   filintoDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   filintoChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   filintoProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   filintoAcessoriosConf.push(e.text)
-        // }
+        pshConf(filintoDataConf, filintoAcessoriosConf, e)
       }
 
       if (e.loja == 'MS ROI LLA') {
-        pshConf(roiDataConf, roiChipsConf, roiProdutosVivoConf, roiAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   roiDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   roiChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   roiProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   roiAcessoriosConf.push(e.text)
-        // }
+        pshConf(roiDataConf, roiAcessoriosConf, e)
       }
 
       if (e.loja == 'MS CÁCERES') {
-        pshConf(caceresDataConf, caceresChipsConf, caceresProdutosVivoConf, caceresAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   caceresDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   caceresChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   caceresProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   caceresAcessoriosConf.push(e.text)
-        // }
+        pshConf(caceresDataConf, caceresAcessoriosConf, e)
       }
 
       if (e.loja == 'MS SORRISO') {
-        pshConf(sorrisoDataConf, sorrisoChipsConf, sorrisoProdutosVivoConf, sorrisoAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   sorrisoDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   sorrisoChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   sorrisoProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   sorrisoAcessoriosConf.push(e.text)
-        // }
+        pshConf(sorrisoDataConf, sorrisoAcessoriosConf, e)
       }
 
       if (e.loja == 'ESTOQUE ADM') {
-        pshConf(estoqueAdmDataConf, estoqueAdmChipsConf, estoqueAdmProdutosVivoConf, estoqueAdmAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   estoqueAdmDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   estoqueAdmChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   estoqueAdmProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   estoqueAdmAcessoriosConf.push(e.text)
-        // }
+        pshConf(estoqueAdmDataConf, estoqueAdmAcessoriosConf, e)
       }
 
       if (e.loja == 'MS VG Shopping') {
-        pshConf(vgShoppingDataConf, vgShoppingChipsConf, vgShoppingProdutosVivoConf, vgShoppingAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   vgShoppingDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   vgShoppingChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   vgShoppingProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   vgShoppingAcessoriosConf.push(e.text)
-        // }
+        pshConf(vgShoppingDataConf, vgShoppingAcessoriosConf, e)
       }
 
       if (e.loja == 'MS BARRA DO GARÇAS') {
-        pshConf(barraDataConf, barraChipsConf, barraProdutosVivoConf, barraAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   barraDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   barraChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   barraProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   barraAcessoriosConf.push(e.text)
-        // }
+        pshConf(barraDataConf, barraAcessoriosConf, e)
       }
 
       if (e.loja == 'MS COUTO') {
-        pshConf(coutoDataConf, coutoChipsConf, coutoProdutosVivoConf, coutoAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   coutoDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   coutoChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   coutoProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   coutoAcessoriosConf.push(e.text)
-        // }
+        pshConf(coutoDataConf, coutoAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PRIMAVERA DO LESTE') {
-        pshConf(primaveraDataConf, primaveraChipsConf, primaveraProdutosVivoConf, primaveraAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   primaveraDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   primaveraChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   primaveraProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   primaveraAcessoriosConf.push(e.text)
-        // }
+        pshConf(primaveraDataConf, primaveraAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PONTES E LACERDA') {
-        pshConf(pontesDataConf, pontesChipsConf, pontesProdutosVivoConf, pontesAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   pontesDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   pontesChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   pontesProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   pontesAcessoriosConf.push(e.text)
-        // }
+        pshConf(pontesDataConf, pontesAcessoriosConf, e)
       }
 
       if (e.loja == 'MS COLIDER') {
-        pshConf(coliderDataConf, coliderChipsConf, coliderProdutosVivoConf, coliderAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   coliderDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   coliderChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   coliderProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   coliderAcessoriosConf.push(e.text)
-        // }
+        pshConf(coliderDataConf, coliderAcessoriosConf, e)
       }
 
       if (e.loja == 'MS MIRASSOL') {
-        pshConf(mirassolDataConf, mirassolChipsConf, mirassolProdutosVivoConf, mirassolAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   mirassolDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   mirassolChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   mirassolProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   mirassolAcessoriosConf.push(e.text)
-        // }
+        pshConf(mirassolDataConf, mirassolAcessoriosConf, e)
       }
 
       if (e.loja == 'MS GUARANTÃ DO NORTE') {
-        pshConf(guarantaDataConf, guarantaChipsConf, guarantaProdutosVivoConf, guarantaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   guarantaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   guarantaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   guarantaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   guarantaAcessoriosConf.push(e.text)
-        // }
+        pshConf(guarantaDataConf, guarantaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS JACIARA') {
-        pshConf(jaciaraDataConf, jaciaraChipsConf, jaciaraProdutosVivoConf, jaciaraAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   jaciaraDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   jaciaraChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   jaciaraProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   jaciaraAcessoriosConf.push(e.text)
-        // }
+        pshConf(jaciaraDataConf, jaciaraAcessoriosConf, e)
       }
 
       if (e.loja == 'MS COMODORO') {
-        pshConf(comodoroDataConf, comodoroChipsConf, comodoroProdutosVivoConf, comodoroAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   comodoroDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   comodoroChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   comodoroProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   comodoroAcessoriosConf.push(e.text)
-        // }
+        pshConf(comodoroDataConf, comodoroAcessoriosConf, e)
       }
 
       if (e.loja == 'MS ALTO ARAGUAIA') {
-        pshConf(altoAraguaiaDataConf, altoAraguaiaChipsConf, altoAraguaiaProdutosVivoConf, altoAraguaiaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   altoAraguaiaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   altoAraguaiaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   altoAraguaiaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   altoAraguaiaAcessoriosConf.push(e.text)
-        // }
+        pshConf(altoAraguaiaDataConf, altoAraguaiaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS ARIQUEMES') {
-        pshConf(ariquemesDataConf, ariquemesChipsConf, ariquemesProdutosVivoConf, ariquemesAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   ariquemesDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   ariquemesChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   ariquemesProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   ariquemesAcessoriosConf.push(e.text)
-        // }
+        pshConf(ariquemesDataConf, ariquemesAcessoriosConf, e)
       }
 
       if (e.loja == 'ESTOQUE ADM RO') {
-        pshConf(estoqueRoDataConf, estoqueRoChipsConf, estoqueRoProdutosVivoConf, estoqueRoAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   estoqueRoDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   estoqueRoChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   estoqueRoProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   estoqueRoAcessoriosConf.push(e.text)
-        // }
+        pshConf(estoqueRoDataConf, estoqueRoAcessoriosConf, e)
       }
 
       if (e.loja == 'MS QUERÊNCIA') {
-        pshConf(querenciaDataConf, querenciaChipsConf, querenciaProdutosVivoConf, querenciaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   querenciaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   querenciaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   querenciaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   querenciaAcessoriosConf.push(e.text)
-        // }
+        pshConf(querenciaDataConf, querenciaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS JARU') {
-        pshConf(jaruDataConf, jaruChipsConf, jaruProdutosVivoConf, jaruAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   jaruDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   jaruChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   jaruProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   jaruAcessoriosConf.push(e.text)
-        // }
+        pshConf(jaruDataConf, jaruAcessoriosConf, e)
       }
 
       if (e.loja == 'MS JI-PARANA') {
-        pshConf(jiParanaDataConf, jiParanaChipsConf, jiParanaProdutosVivoConf, jiParanaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   jiParanaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   jiParanaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   jiParanaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   jiParanaAcessoriosConf.push(e.text)
-        // }
+        pshConf(jiParanaDataConf, jiParanaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PEIXOTO DE AZEVEDO') {
-        pshConf(peixotoDataConf, peixotoChipsConf, peixotoProdutosVivoConf, peixotoAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   peixotoDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   peixotoChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   peixotoProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   peixotoAcessoriosConf.push(e.text)
-        // }
+        pshConf(peixotoDataConf, peixotoAcessoriosConf, e)
       }
 
       if (e.loja == 'MS ROLIM DE MOURA') {
-        pshConf(rolimDataConf, rolimChipsConf, rolimProdutosVivoConf, rolimAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   rolimDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   rolimChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   rolimProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   rolimAcessoriosConf.push(e.text)
-        // }
+        pshConf(rolimDataConf, rolimAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PIMENTA BUENO') {
-        pshConf(pimentaDataConf, pimentaChipsConf, pimentaProdutosVivoConf, pimentaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   pimentaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   pimentaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   pimentaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   pimentaAcessoriosConf.push(e.text)
-        // }
+        pshConf(pimentaDataConf, pimentaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS VILHENA') {
-        pshConf(vilhenaDataConf, vilhenaChipsConf, vilhenaProdutosVivoConf, vilhenaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   vilhenaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   vilhenaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   vilhenaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   vilhenaAcessoriosConf.push(e.text)
-        // }
+        pshConf(vilhenaDataConf, vilhenaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS CACOAL') {
-        pshConf(cacoalDataConf, cacoalChipsConf, cacoalProdutosVivoConf, cacoalAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   cacoalDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   cacoalChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   cacoalProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   cacoalAcessoriosConf.push(e.text)
-        // }
+        pshConf(cacoalDataConf, cacoalAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PV - 07 SETEMBRO') {
-        pshConf(setembroDataConf, setembroChipsConf, setembroProdutosVivoConf, setembroAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   setembroDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   setembroChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   setembroProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   setembroAcessoriosConf.push(e.text)
-        // }
+        pshConf(setembroDataConf, setembroAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PV - JATUARANA') {
-        pshConf(jatuaranaDataConf, jatuaranaChipsConf, jatuaranaProdutosVivoConf, jatuaranaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   jatuaranaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   jatuaranaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   jatuaranaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   jatuaranaAcessoriosConf.push(e.text)
-        // }
+        pshConf(jatuaranaDataConf, jatuaranaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS PV - JOSE AMADOR') {
-        pshConf(joseDataConf, joseChipsConf, joseProdutosVivoConf, joseAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   joseDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   joseChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   joseProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   joseAcessoriosConf.push(e.text)
-        // }
+        pshConf(joseDataConf, joseAcessoriosConf, e)
       }
 
       if (e.loja == 'MS CONFRESA') {
-        pshConf(confresaDataConf, confresaChipsConf, confresaProdutosVivoConf, confresaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   confresaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   confresaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   confresaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   confresaAcessoriosConf.push(e.text)
-        // }
+        pshConf(confresaDataConf, confresaAcessoriosConf, e)
       }
 
       if (e.loja == 'MS NOVA XAVANTINA') {
-        pshConf(xavantinaDataConf, xavantinaChipsConf, xavantinaProdutosVivoConf, xavantinaAcessoriosConf, e)
-        // if (e.categoria == 'Diversos') {
-        //   xavantinaDataConf.push(e.text)
-        // } else if (e.categoria == 'Chips') {
-        //   xavantinaChipsConf.push(e.text)
-        // } else if (e.categoria == 'ProdutosVivo') {
-        //   xavantinaProdutosVivoConf.push(e.text)
-        // } else if (e.categoria == 'Acessorios') {
-        //   xavantinaAcessoriosConf.push(e.text)
-        // }
+        pshConf(xavantinaDataConf, xavantinaAcessoriosConf, e)
       }
     })
 
@@ -1081,8 +705,8 @@ function App() {
   }
 
   async function leitura() {
-    // Quando Diversos estiver marcado
-    if (categoria == 'Diversos') {
+    // Quando OUTROS estiver selecionado
+    if (categoria == 'Outros') {
       procurar(lucasDataConf, lucasDiferenca, lucasData)
 
       procurar(filintoDataConf, filintoDiferenca, filintoData)
@@ -1147,142 +771,7 @@ function App() {
 
       procurar(xavantinaDataConf, xavantinaDiferenca, xavantinaData)
 
-
-      // Quando CHIP estiver marcado
-    } else if (categoria == 'Chips') {
-      procurar(lucasChipsConf, lucasDiferenca, lucasData)
-
-      procurar(filintoChipsConf, filintoDiferenca, filintoData)
-
-      procurar(roiChipsConf, roiDiferenca, roiData)
-
-      procurar(caceresChipsConf, caceresDiferenca, caceresData)
-
-      procurar(sorrisoChipsConf, sorrisoDiferenca, sorrisoData)
-
-      procurar(estoqueAdmChipsConf, estoqueAdmDiferenca, estoqueAdmData)
-
-      procurar(vgShoppingChipsConf, vgShoppingDiferenca, vgShoppingData)
-
-      procurar(barraChipsConf, barraDiferenca, barraData)
-
-      procurar(coutoChipsConf, coutoDiferenca, coutoData)
-
-      procurar(primaveraChipsConf, primaveraDiferenca, primaveraData)
-
-      procurar(pontesChipsConf, pontesDiferenca, pontesData)
-
-      procurar(coliderChipsConf, coliderDiferenca, coliderData)
-
-      procurar(mirassolChipsConf, mirassolDiferenca, mirassolData)
-
-      procurar(guarantaChipsConf, guarantaDiferenca, guarantaData)
-
-      procurar(jaciaraChipsConf, jaciaraDiferenca, jaciaraData)
-
-      procurar(comodoroChipsConf, comodoroDiferenca, comodoroData)
-
-      procurar(altoAraguaiaChipsConf, altoAraguaiaDiferenca, altoAraguaiaData)
-
-      procurar(ariquemesChipsConf, ariquemesDiferenca, ariquemesData)
-
-      procurar(estoqueRoChipsConf, estoqueRoDiferenca, estoqueRoData)
-
-      procurar(querenciaChipsConf, querenciaDiferenca, querenciaData)
-
-      procurar(jaruChipsConf, jaruDiferenca, jaruData)
-
-      procurar(jiParanaChipsConf, jiParanaDiferenca, jiParanaData)
-
-      procurar(peixotoChipsConf, peixotoDiferenca, peixotoData)
-
-      procurar(rolimChipsConf, rolimDiferenca, rolimData)
-
-      procurar(pimentaChipsConf, pimentaDiferenca, pimentaData)
-
-      procurar(vilhenaChipsConf, vilhenaDiferenca, vilhenaData)
-
-      procurar(cacoalChipsConf, cacoalDiferenca, cacoalData)
-
-      procurar(setembroChipsConf, setembroDiferenca, setembroData)
-
-      procurar(jatuaranaChipsConf, jatuaranaDiferenca, jatuaranaData)
-
-      procurar(joseChipsConf, joseDiferenca, joseData)
-
-      procurar(confresaChipsConf, confresaDiferenca, confresaData)
-
-      procurar(xavantinaChipsConf, xavantinaDiferenca, xavantinaData)
-
-
-      // Quando PRODUTOSVIVO estiver marcado
-    } else if (categoria == 'ProdutosVivo') {
-      procurar(lucasProdutosVivoConf, lucasDiferenca, lucasData)
-
-      procurar(filintoProdutosVivoConf, filintoDiferenca, filintoData)
-
-      procurar(roiProdutosVivoConf, roiDiferenca, roiData)
-
-      procurar(caceresProdutosVivoConf, caceresDiferenca, caceresData)
-
-      procurar(sorrisoProdutosVivoConf, sorrisoDiferenca, sorrisoData)
-
-      procurar(estoqueAdmProdutosVivoConf, estoqueAdmDiferenca, estoqueAdmData)
-
-      procurar(vgShoppingProdutosVivoConf, vgShoppingDiferenca, vgShoppingData)
-
-      procurar(barraProdutosVivoConf, barraDiferenca, barraData)
-
-      procurar(coutoProdutosVivoConf, coutoDiferenca, coutoData)
-
-      procurar(primaveraProdutosVivoConf, primaveraDiferenca, primaveraData)
-
-      procurar(pontesProdutosVivoConf, pontesDiferenca, pontesData)
-
-      procurar(coliderProdutosVivoConf, coliderDiferenca, coliderData)
-
-      procurar(mirassolProdutosVivoConf, mirassolDiferenca, mirassolData)
-
-      procurar(guarantaProdutosVivoConf, guarantaDiferenca, guarantaData)
-
-      procurar(jaciaraProdutosVivoConf, jaciaraDiferenca, jaciaraData)
-
-      procurar(comodoroProdutosVivoConf, comodoroDiferenca, comodoroData)
-
-      procurar(altoAraguaiaProdutosVivoConf, altoAraguaiaDiferenca, altoAraguaiaData)
-
-      procurar(ariquemesProdutosVivoConf, ariquemesDiferenca, ariquemesData)
-
-      procurar(estoqueRoProdutosVivoConf, estoqueRoDiferenca, estoqueRoData)
-
-      procurar(querenciaProdutosVivoConf, querenciaDiferenca, querenciaData)
-
-      procurar(jaruProdutosVivoConf, jaruDiferenca, jaruData)
-
-      procurar(jiParanaProdutosVivoConf, jiParanaDiferenca, jiParanaData)
-
-      procurar(peixotoProdutosVivoConf, peixotoDiferenca, peixotoData)
-
-      procurar(rolimProdutosVivoConf, rolimDiferenca, rolimData)
-
-      procurar(pimentaProdutosVivoConf, pimentaDiferenca, pimentaData)
-
-      procurar(vilhenaProdutosVivoConf, vilhenaDiferenca, vilhenaData)
-
-      procurar(cacoalProdutosVivoConf, cacoalDiferenca, cacoalData)
-
-      procurar(setembroProdutosVivoConf, setembroDiferenca, setembroData)
-
-      procurar(jatuaranaProdutosVivoConf, jatuaranaDiferenca, jatuaranaData)
-
-      procurar(joseProdutosVivoConf, joseDiferenca, joseData)
-
-      procurar(confresaProdutosVivoConf, confresaDiferenca, confresaData)
-
-      procurar(xavantinaProdutosVivoConf, xavantinaDiferenca, xavantinaData)
-
-
-      // Quando ACESSORIOS estiver marcado
+      // Quando ACESSORIOS tiver selecionado
     } else if (categoria == 'Acessorios') {
       procurarAcessorios(lucasAcessoriosConf, lucasDiferenca, lucasData)
 
@@ -1446,7 +935,7 @@ function App() {
     }
   }
 
-  const [categoria, setCategoria] = useState('Diversos')
+  const [categoria, setCategoria] = useState('Acessorios')
   const categoriaChange = (e) => {
     setCategoria(e.target.value)
   }
@@ -1473,10 +962,8 @@ function App() {
       <p>Para iniciar o processo, selecione a categoria e clique no botão: "Verificar Lojas"</p>
       <p>Categoria:</p>
       <select name="categoria" id="categoria" value={categoria} onChange={categoriaChange}>
-        <option value="Diversos">Diversos</option>
-        <option value="Chips">Chips</option>
-        <option value="ProdutosVivo">Produtos Vivo</option>
         <option value="Acessorios">Acessórios</option>
+        <option value="Outros">Outros</option>
       </select>
       <p></p>
       <button onClick={fizeram}>1 - Verificar Lojas</button>
