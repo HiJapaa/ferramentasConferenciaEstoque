@@ -63,7 +63,6 @@ function App() {
   let roiData = []
   let caceresData = []
   let sorrisoData = []
-  let estoqueAdmData = []
   let vgShoppingData = []
   let barraData = []
   let coutoData = []
@@ -76,7 +75,6 @@ function App() {
   let comodoroData = []
   let altoAraguaiaData = []
   let ariquemesData = []
-  let estoqueRoData = []
   let querenciaData = []
   let jaruData = []
   let jiParanaData = []
@@ -93,6 +91,7 @@ function App() {
 
   function pshAcessorios(data, e) {
     data.push({
+      Descrição:e[5],
       Serial: e[3],
       Quantidade: e[13] * (-1)
     })
@@ -100,6 +99,7 @@ function App() {
 
   function psh(data, e) {
     data.push({
+      Descrição: e[9],
       Serial: e[12],
       Quantidade: e[18] * (-1)
     })
@@ -133,10 +133,6 @@ function App() {
 
         if (e[1] == 'MS SORRISO') {
           pshAcessorios(sorrisoData, e)
-        }
-
-        if (e[1] == 'ESTOQUE ADM') {
-          pshAcessorios(estoqueAdmData, e)
         }
 
         if (e[1] == 'MS VG Shopping') {
@@ -185,10 +181,6 @@ function App() {
 
         if (e[1] == 'MS ARIQUEMES') {
           pshAcessorios(ariquemesData, e)
-        }
-
-        if (e[1] == 'ESTOQUE ADM RO') {
-          pshAcessorios(estoqueRoData, e)
         }
 
         if (e[1] == 'MS QUERÊNCIA') {
@@ -269,10 +261,6 @@ function App() {
           psh(sorrisoData, e)
         }
 
-        if (e[1] == 'ESTOQUE ADM') {
-          psh(estoqueAdmData, e)
-        }
-
         if (e[1] == 'MS VG Shopping') {
           psh(vgShoppingData, e)
         }
@@ -319,10 +307,6 @@ function App() {
 
         if (e[1] == 'MS ARIQUEMES') {
           psh(ariquemesData, e)
-        }
-
-        if (e[1] == 'ESTOQUE ADM RO') {
-          psh(estoqueRoData, e)
         }
 
         if (e[1] == 'MS QUERÊNCIA') {
@@ -380,7 +364,7 @@ function App() {
     })
   }
 
-  let lojas = ['MS LUCAS', 'MS FILINTO', 'MS ROI LLA', 'MS CÁCERES', 'MS SORRISO', 'ESTOQUE ADM', 'MS VG Shopping', 'MS BARRA DO GARÇAS', 'MS COUTO', 'MS PRIMAVERA DO LESTE', 'MS PONTES E LACERDA', 'MS COLIDER', 'MS MIRASSOL', 'MS GUARANTÃ DO NORTE', 'MS JACIARA', 'MS COMODORO', 'MS ALTO ARAGUAIA', 'MS ARIQUEMES', 'ESTOQUE ADM RO', 'MS QUERÊNCIA', 'MS JARU', 'MS JI-PARANA', 'MS PEIXOTO DE AZEVEDO', 'MS ROLIM DE MOURA', 'MS PIMENTA BUENO', 'MS VILHENA', 'MS CACOAL', 'MS PV - 07 SETEMBRO', 'MS PV - JATUARANA', 'MS PV - JOSE AMADOR', 'MS CONFRESA', 'MS NOVA XAVANTINA']
+  let lojas = ['MS LUCAS', 'MS FILINTO', 'MS ROI LLA', 'MS CÁCERES', 'MS SORRISO', 'MS VG Shopping', 'MS BARRA DO GARÇAS', 'MS COUTO', 'MS PRIMAVERA DO LESTE', 'MS PONTES E LACERDA', 'MS COLIDER', 'MS MIRASSOL', 'MS GUARANTÃ DO NORTE', 'MS JACIARA', 'MS COMODORO', 'MS ALTO ARAGUAIA', 'MS ARIQUEMES', 'MS QUERÊNCIA', 'MS JARU', 'MS JI-PARANA', 'MS PEIXOTO DE AZEVEDO', 'MS ROLIM DE MOURA', 'MS PIMENTA BUENO', 'MS VILHENA', 'MS CACOAL', 'MS PV - 07 SETEMBRO', 'MS PV - JATUARANA', 'MS PV - JOSE AMADOR', 'MS CONFRESA', 'MS NOVA XAVANTINA']
   let [faltantes, setFaltantes] = useState([])
   let feitas = []
 
@@ -413,7 +397,6 @@ function App() {
   let roiDataConf = []
   let caceresDataConf = []
   let sorrisoDataConf = []
-  let estoqueAdmDataConf = []
   let vgShoppingDataConf = []
   let barraDataConf = []
   let coutoDataConf = []
@@ -426,7 +409,6 @@ function App() {
   let comodoroDataConf = []
   let altoAraguaiaDataConf = []
   let ariquemesDataConf = []
-  let estoqueRoDataConf = []
   let querenciaDataConf = []
   let jaruDataConf = []
   let jiParanaDataConf = []
@@ -446,7 +428,6 @@ function App() {
   let roiAcessoriosConf = []
   let caceresAcessoriosConf = []
   let sorrisoAcessoriosConf = []
-  let estoqueAdmAcessoriosConf = []
   let vgShoppingAcessoriosConf = []
   let barraAcessoriosConf = []
   let coutoAcessoriosConf = []
@@ -459,7 +440,6 @@ function App() {
   let comodoroAcessoriosConf = []
   let altoAraguaiaAcessoriosConf = []
   let ariquemesAcessoriosConf = []
-  let estoqueRoAcessoriosConf = []
   let querenciaAcessoriosConf = []
   let jaruAcessoriosConf = []
   let jiParanaAcessoriosConf = []
@@ -502,10 +482,6 @@ function App() {
 
       if (e.loja == 'MS SORRISO') {
         pshConf(sorrisoDataConf, sorrisoAcessoriosConf, e)
-      }
-
-      if (e.loja == 'ESTOQUE ADM') {
-        pshConf(estoqueAdmDataConf, estoqueAdmAcessoriosConf, e)
       }
 
       if (e.loja == 'MS VG Shopping') {
@@ -554,10 +530,6 @@ function App() {
 
       if (e.loja == 'MS ARIQUEMES') {
         pshConf(ariquemesDataConf, ariquemesAcessoriosConf, e)
-      }
-
-      if (e.loja == 'ESTOQUE ADM RO') {
-        pshConf(estoqueRoDataConf, estoqueRoAcessoriosConf, e)
       }
 
       if (e.loja == 'MS QUERÊNCIA') {
@@ -621,7 +593,6 @@ function App() {
   let roiDiferenca = []
   let caceresDiferenca = []
   let sorrisoDiferenca = []
-  let estoqueAdmDiferenca = []
   let vgShoppingDiferenca = []
   let barraDiferenca = []
   let coutoDiferenca = []
@@ -634,7 +605,6 @@ function App() {
   let comodoroDiferenca = []
   let altoAraguaiaDiferenca = []
   let ariquemesDiferenca = []
-  let estoqueRoDiferenca = []
   let querenciaDiferenca = []
   let jaruDiferenca = []
   let jiParanaDiferenca = []
@@ -717,8 +687,6 @@ function App() {
 
       procurar(sorrisoDataConf, sorrisoDiferenca, sorrisoData)
 
-      procurar(estoqueAdmDataConf, estoqueAdmDiferenca, estoqueAdmData)
-
       procurar(vgShoppingDataConf, vgShoppingDiferenca, vgShoppingData)
 
       procurar(barraDataConf, barraDiferenca, barraData)
@@ -742,8 +710,6 @@ function App() {
       procurar(altoAraguaiaDataConf, altoAraguaiaDiferenca, altoAraguaiaData)
 
       procurar(ariquemesDataConf, ariquemesDiferenca, ariquemesData)
-
-      procurar(estoqueRoDataConf, estoqueRoDiferenca, estoqueRoData)
 
       procurar(querenciaDataConf, querenciaDiferenca, querenciaData)
 
@@ -783,8 +749,6 @@ function App() {
 
       procurarAcessorios(sorrisoAcessoriosConf, sorrisoDiferenca, sorrisoData)
 
-      procurarAcessorios(estoqueAdmAcessoriosConf, estoqueAdmDiferenca, estoqueAdmData)
-
       procurarAcessorios(vgShoppingAcessoriosConf, vgShoppingDiferenca, vgShoppingData)
 
       procurarAcessorios(barraAcessoriosConf, barraDiferenca, barraData)
@@ -808,8 +772,6 @@ function App() {
       procurarAcessorios(altoAraguaiaAcessoriosConf, altoAraguaiaDiferenca, altoAraguaiaData)
 
       procurarAcessorios(ariquemesAcessoriosConf, ariquemesDiferenca, ariquemesData)
-
-      procurarAcessorios(estoqueRoAcessoriosConf, estoqueRoDiferenca, estoqueRoData)
 
       procurarAcessorios(querenciaAcessoriosConf, querenciaDiferenca, querenciaData)
 
@@ -849,8 +811,6 @@ function App() {
 
     verificarDiff(sorrisoDiferenca, 'Sorriso', 0)
 
-    verificarDiff(estoqueAdmDiferenca, 'Estoque ADM', 0)
-
     verificarDiff(vgShoppingDiferenca, 'VG Shopping', 0)
 
     verificarDiff(barraDiferenca, 'Barra do Garças', 0)
@@ -874,8 +834,6 @@ function App() {
     verificarDiff(altoAraguaiaDiferenca, 'Alto Araguaia', 1500)
 
     verificarDiff(ariquemesDiferenca, 'Ariquemes', 3000)
-
-    verificarDiff(estoqueRoDiferenca, 'Estoque RO', 3000)
 
     verificarDiff(querenciaDiferenca, 'Querência', 3000)
 
@@ -982,7 +940,6 @@ function App() {
                     </div>
                   )
                 })
-
               }
             </div>
           </>
