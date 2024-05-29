@@ -91,9 +91,10 @@ function App() {
 
   function pshAcessorios(data, e) {
     data.push({
-      Descrição:e[5],
+      Descrição: e[5],
       Serial: e[3],
-      Quantidade: e[13] * (-1)
+      Quantidade: e[13] * (-1),
+      QuantidadeFinal: e[13] * (-1)
     })
   }
 
@@ -101,7 +102,8 @@ function App() {
     data.push({
       Descrição: e[9],
       Serial: e[12],
-      Quantidade: e[18] * (-1)
+      Quantidade: e[18] * (-1),
+      QuantidadeFinal: e[18] * (-1)
     })
   }
 
@@ -625,18 +627,23 @@ function App() {
         if (e !== '') {
           let index = data.findIndex(element => element.Serial.includes(e))
           if (index < 0) {
-            diff.push({
-              Serial: e,
-              Quantidade: 1
-            })
+            let indexDiff = diff.findIndex(element => element.Serial.includes(e))
+            if(indexDiff < 0) {
+              diff.push({
+                Serial: e,
+                Quantidade: 1
+              })
+            } else {
+              diff[indexDiff].Quantidade++
+            }
           } else {
-            data[index].Quantidade++
+            data[index].QuantidadeFinal++
           }
         }
       })
     }
     data.forEach(e => {
-      if (e.Quantidade !== 0) {
+      if (e.QuantidadeFinal !== 0) {
         diff.push(e)
       }
     })
@@ -649,18 +656,23 @@ function App() {
         if (e !== '') {
           let index = data.findIndex(element => element.Serial == e)
           if (index < 0) {
-            diff.push({
-              Serial: e,
-              Quantidade: 1
-            })
+            let indexDiff = diff.findIndex(element => element.Serial == e)
+            if(indexDiff < 0) {
+              diff.push({
+                Serial: e,
+                Quantidade: 1
+              })
+            } else {
+              diff[indexDiff].Quantidade++
+            }
           } else {
-            data[index].Quantidade++
+            data[index].QuantidadeFinal++
           }
         }
       })
     }
     data.forEach(e => {
-      if (e.Quantidade !== 0) {
+      if (e.QuantidadeFinal !== 0) {
         diff.push(e)
       }
     })
@@ -870,6 +882,7 @@ function App() {
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.json_to_sheet(data);
     XLSX.utils.book_append_sheet(wb, ws, `${nome}`);
+
     const wbout = XLSX.write(wb, { type: 'binary', bookType: 'xlsx' });
 
     const s2ab = (s) => {
@@ -892,6 +905,7 @@ function App() {
       a.click();
     }
   }
+
 
   const [categoria, setCategoria] = useState('Acessorios')
   const categoriaChange = (e) => {
