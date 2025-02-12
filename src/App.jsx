@@ -88,6 +88,8 @@ function App() {
   let joseData = []
   let confresaData = []
   let xavantinaData = []
+  let vinteQuatroOutubroData = []
+  let plazaDoroData = []
 
   function pshAcessorios(data, e) {
     data.push({
@@ -236,6 +238,14 @@ function App() {
         if (e[1] == 'MS NOVA XAVANTINA') {
           pshAcessorios(xavantinaData, e)
         }
+
+        if (e[1] == 'MS GO - 24 OUTUBRO') {
+          pshAcessorios(vinteQuatroOutubroData, e)
+        }
+
+        if (e[1] == 'MS GO - PLAZA DORO') {
+          pshAcessorios(plazaDoroData, e)
+        }
       } else {
         dataEstoque.push({
           Filial: e[1],
@@ -362,11 +372,19 @@ function App() {
         if (e[1] == 'MS NOVA XAVANTINA') {
           psh(xavantinaData, e)
         }
+
+        if (e[1] == 'MS GO - 24 OUTUBRO') {
+          psh(vinteQuatroOutubroData, e)
+        }
+
+        if (e[1] == 'MS GO - PLAZA DORO') {
+          psh(plazaDoroData, e)
+        }
       }
     })
   }
 
-  let lojas = ['MS LUCAS', 'MS FILINTO', 'MS ROI LLA', 'MS CÁCERES', 'MS SORRISO', 'MS VG Shopping', 'MS BARRA DO GARÇAS', 'MS COUTO', 'MS PRIMAVERA DO LESTE', 'MS PONTES E LACERDA', 'MS COLIDER', 'MS MIRASSOL', 'MS GUARANTÃ DO NORTE', 'MS JACIARA', 'MS COMODORO', 'MS ALTO ARAGUAIA', 'MS ARIQUEMES', 'MS QUERÊNCIA', 'MS JARU', 'MS JI-PARANA', 'MS PEIXOTO DE AZEVEDO', 'MS ROLIM DE MOURA', 'MS PIMENTA BUENO', 'MS VILHENA', 'MS CACOAL', 'MS PV - 07 SETEMBRO', 'MS PV - JATUARANA', 'MS PV - JOSE AMADOR', 'MS CONFRESA', 'MS NOVA XAVANTINA']
+  let lojas = ['MS LUCAS', 'MS FILINTO', 'MS ROI LLA', 'MS CÁCERES', 'MS SORRISO', 'MS VG Shopping', 'MS BARRA DO GARÇAS', 'MS COUTO', 'MS PRIMAVERA DO LESTE', 'MS PONTES E LACERDA', 'MS COLIDER', 'MS MIRASSOL', 'MS GUARANTÃ DO NORTE', 'MS JACIARA', 'MS COMODORO', 'MS ALTO ARAGUAIA', 'MS ARIQUEMES', 'MS QUERÊNCIA', 'MS JARU', 'MS JI-PARANA', 'MS PEIXOTO DE AZEVEDO', 'MS ROLIM DE MOURA', 'MS PIMENTA BUENO', 'MS VILHENA', 'MS CACOAL', 'MS PV - 07 SETEMBRO', 'MS PV - JATUARANA', 'MS PV - JOSE AMADOR', 'MS CONFRESA', 'MS NOVA XAVANTINA', 'MS GO - 24 OUTUBRO', 'MS GO - PLAZA DORO']
   let [faltantes, setFaltantes] = useState([])
   let feitas = []
 
@@ -424,6 +442,8 @@ function App() {
   let joseDataConf = []
   let confresaDataConf = []
   let xavantinaDataConf = []
+  let vinteQuatroOutubroDataConf = []
+  let plazaDoroDataConf = []
 
   let lucasAcessoriosConf = []
   let filintoAcessoriosConf = []
@@ -455,6 +475,8 @@ function App() {
   let joseAcessoriosConf = []
   let confresaAcessoriosConf = []
   let xavantinaAcessoriosConf = []
+  let vinteQuatroOutubroAcessoriosConf = []
+  let plazaDoroAcessoriosConf = []
 
   function pshConf(dataConf, acessoriosConf, e) {
     if (e.categoria == 'Outros') {
@@ -585,6 +607,14 @@ function App() {
       if (e.loja == 'MS NOVA XAVANTINA') {
         pshConf(xavantinaDataConf, xavantinaAcessoriosConf, e)
       }
+
+      if (e.loja == 'MS GO - 24 OUTUBRO') {
+        pshConf(vinteQuatroOutubroDataConf, vinteQuatroOutubroAcessoriosConf, e)
+      }
+
+      if (e.loja == 'MS GO - PLAZA DORO') {
+        pshConf(plazaDoroDataConf, plazaDoroAcessoriosConf, e)
+      }
     })
 
     alert('Terminou, clique no botão "Verificar"')
@@ -620,6 +650,8 @@ function App() {
   let joseDiferenca = []
   let confresaDiferenca = []
   let xavantinaDiferenca = []
+  let vinteQuatroOutubroDiferenca = []
+  let plazaDoroDiferenca = []
 
   function procurar(conf, diff, data) {
     if (conf[0] !== undefined) {
@@ -749,6 +781,10 @@ function App() {
 
       procurar(xavantinaDataConf, xavantinaDiferenca, xavantinaData)
 
+      procurar(vinteQuatroOutubroDataConf, vinteQuatroOutubroDiferenca, vinteQuatroOutubroData)
+
+      procurar(plazaDoroDataConf, plazaDoroDiferenca, plazaDoroData)
+
       // Quando ACESSORIOS tiver selecionado
     } else if (categoria == 'Acessorios') {
       procurarAcessorios(lucasAcessoriosConf, lucasDiferenca, lucasData)
@@ -810,6 +846,10 @@ function App() {
       procurarAcessorios(confresaAcessoriosConf, confresaDiferenca, confresaData)
 
       procurarAcessorios(xavantinaAcessoriosConf, xavantinaDiferenca, xavantinaData)
+
+      procurarAcessorios(vinteQuatroOutubroAcessoriosConf, vinteQuatroOutubroDiferenca, vinteQuatroOutubroData)
+
+      procurarAcessorios(plazaDoroAcessoriosConf, plazaDoroDiferenca, plazaDoroData)
     }
 
     // Caso haja diferença conferência x sistema, exportará o arquivo
@@ -872,6 +912,10 @@ function App() {
     verificarDiff(confresaDiferenca, 'Confresa', 4500)
 
     verificarDiff(xavantinaDiferenca, 'Xavantina', 4500)
+
+    verificarDiff(vinteQuatroOutubroDiferenca, '24Outubro', 6000)
+
+    verificarDiff(plazaDoroDiferenca, 'Plaza Doro', 6000)
 
     document.getElementById('p').setAttribute('style', 'display: block')
   }
