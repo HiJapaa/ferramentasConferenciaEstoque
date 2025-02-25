@@ -93,291 +93,292 @@ function App() {
 
   function pshAcessorios(data, e) {
     data.push({
-      Descrição: e[5],
-      Serial: e[3],
-      Quantidade: e[13] * (-1),
-      QuantidadeFinal: e[13] * (-1)
+      Descrição: e[7],
+      Serial: e[5],
+      Quantidade: e[15] * (-1),
+      QuantidadeFinal: e[15] * (-1)
     })
   }
 
   function psh(data, e) {
     data.push({
-      Descrição: e[9],
-      Serial: e[12],
-      Quantidade: e[18] * (-1),
-      QuantidadeFinal: e[18] * (-1)
+      Descrição: e[11],
+      Serial: e[14],
+      Quantidade: e[20] * (-1),
+      QuantidadeFinal: e[20] * (-1)
     })
   }
 
   // Processamento do arquivo XLSX
   function processCSVEstoque(content) {
+    console.log(content)
     content.forEach(e => {
       if (categoria == 'Acessorios') {
         dataEstoque.push({
-          Filial: e[1],
-          Serial: e[3],
-          Quantidade: e[13] * (-1)
+          Filial: e[3],
+          Serial: e[5],
+          Quantidade: e[15] * (-1)
         })
 
-        if (e[1] == 'MS LUCAS') {
+        if (e[3] == 'MS LUCAS') {
           pshAcessorios(lucasData, e)
         }
 
-        if (e[1] == 'MS FILINTO') {
+        if (e[3] == 'MS FILINTO') {
           pshAcessorios(filintoData, e)
         }
 
-        if (e[1] == 'MS ROI LLA') {
+        if (e[3] == 'MS ROI LLA') {
           pshAcessorios(roiData, e)
         }
 
-        if (e[1] == 'MS CÁCERES') {
+        if (e[3] == 'MS CÁCERES') {
           pshAcessorios(caceresData, e)
         }
 
-        if (e[1] == 'MS SORRISO') {
+        if (e[3] == 'MS SORRISO') {
           pshAcessorios(sorrisoData, e)
         }
 
-        if (e[1] == 'MS VG Shopping') {
+        if (e[3] == 'MS VG Shopping') {
           pshAcessorios(vgShoppingData, e)
         }
 
-        if (e[1] == 'MS BARRA DO GARÇAS') {
+        if (e[3] == 'MS BARRA DO GARÇAS') {
           pshAcessorios(barraData, e)
         }
 
-        if (e[1] == 'MS COUTO') {
+        if (e[3] == 'MS COUTO') {
           pshAcessorios(coutoData, e)
         }
 
-        if (e[1] == 'MS PRIMAVERA DO LESTE') {
+        if (e[3] == 'MS PRIMAVERA DO LESTE') {
           pshAcessorios(primaveraData, e)
         }
 
-        if (e[1] == 'MS PONTES E LACERDA') {
+        if (e[3] == 'MS PONTES E LACERDA') {
           pshAcessorios(pontesData, e)
         }
 
-        if (e[1] == 'MS COLIDER') {
+        if (e[3] == 'MS COLIDER') {
           pshAcessorios(coliderData, e)
         }
 
-        if (e[1] == 'MS MIRASSOL') {
+        if (e[3] == 'MS MIRASSOL') {
           pshAcessorios(mirassolData, e)
         }
 
-        if (e[1] == 'MS GUARANTÃ DO NORTE') {
+        if (e[3] == 'MS GUARANTÃ DO NORTE') {
           pshAcessorios(guarantaData, e)
         }
 
-        if (e[1] == 'MS JACIARA') {
+        if (e[3] == 'MS JACIARA') {
           pshAcessorios(jaciaraData, e)
         }
 
-        if (e[1] == 'MS COMODORO') {
+        if (e[3] == 'MS COMODORO') {
           pshAcessorios(comodoroData, e)
         }
 
-        if (e[1] == 'MS ALTO ARAGUAIA') {
+        if (e[3] == 'MS ALTO ARAGUAIA') {
           pshAcessorios(altoAraguaiaData, e)
         }
 
-        if (e[1] == 'MS ARIQUEMES') {
+        if (e[3] == 'MS ARIQUEMES') {
           pshAcessorios(ariquemesData, e)
         }
 
-        if (e[1] == 'MS QUERÊNCIA') {
+        if (e[3] == 'MS QUERÊNCIA') {
           pshAcessorios(querenciaData, e)
         }
 
-        if (e[1] == 'MS JARU') {
+        if (e[3] == 'MS JARU') {
           pshAcessorios(jaruData, e)
         }
 
-        if (e[1] == 'MS JI-PARANA') {
+        if (e[3] == 'MS JI-PARANA') {
           pshAcessorios(jiParanaData, e)
         }
 
-        if (e[1] == 'MS PEIXOTO DE AZEVEDO') {
+        if (e[3] == 'MS PEIXOTO DE AZEVEDO') {
           pshAcessorios(peixotoData, e)
         }
 
-        if (e[1] == 'MS ROLIM DE MOURA') {
+        if (e[3] == 'MS ROLIM DE MOURA') {
           pshAcessorios(rolimData, e)
         }
 
-        if (e[1] == 'MS PIMENTA BUENO') {
+        if (e[3] == 'MS PIMENTA BUENO') {
           pshAcessorios(pimentaData, e)
         }
 
-        if (e[1] == 'MS VILHENA') {
+        if (e[3] == 'MS VILHENA') {
           pshAcessorios(vilhenaData, e)
         }
 
-        if (e[1] == 'MS CACOAL') {
+        if (e[3] == 'MS CACOAL') {
           pshAcessorios(cacoalData, e)
         }
 
-        if (e[1] == 'MS PV - 07 SETEMBRO') {
+        if (e[3] == 'MS PV - 07 SETEMBRO') {
           pshAcessorios(setembroData, e)
         }
 
-        if (e[1] == 'MS PV - JATUARANA') {
+        if (e[3] == 'MS PV - JATUARANA') {
           pshAcessorios(jatuaranaData, e)
         }
 
-        if (e[1] == 'MS PV - JOSE AMADOR') {
+        if (e[3] == 'MS PV - JOSE AMADOR') {
           pshAcessorios(joseData, e)
         }
 
-        if (e[1] == 'MS CONFRESA') {
+        if (e[3] == 'MS CONFRESA') {
           pshAcessorios(confresaData, e)
         }
 
-        if (e[1] == 'MS NOVA XAVANTINA') {
+        if (e[3] == 'MS NOVA XAVANTINA') {
           pshAcessorios(xavantinaData, e)
         }
 
-        if (e[1] == 'MS GO - 24 OUTUBRO') {
+        if (e[3] == 'MS GO - 24 OUTUBRO') {
           pshAcessorios(vinteQuatroOutubroData, e)
         }
 
-        if (e[1] == 'MS GO - PLAZA DORO') {
+        if (e[3] == 'MS GO - PLAZA DORO') {
           pshAcessorios(plazaDoroData, e)
         }
       } else {
         dataEstoque.push({
-          Filial: e[1],
-          Serial: e[12],
-          Quantidade: e[18] * (-1)
+          Filial: e[3],
+          Serial: e[14],
+          Quantidade: e[20] * (-1)
         })
 
-        if (e[1] == 'MS LUCAS') {
+        if (e[3] == 'MS LUCAS') {
           psh(lucasData, e)
         }
 
-        if (e[1] == 'MS FILINTO') {
+        if (e[3] == 'MS FILINTO') {
           psh(filintoData, e)
         }
 
-        if (e[1] == 'MS ROI LLA') {
+        if (e[3] == 'MS ROI LLA') {
           psh(roiData, e)
         }
 
-        if (e[1] == 'MS CÁCERES') {
+        if (e[3] == 'MS CÁCERES') {
           psh(caceresData, e)
         }
 
-        if (e[1] == 'MS SORRISO') {
+        if (e[3] == 'MS SORRISO') {
           psh(sorrisoData, e)
         }
 
-        if (e[1] == 'MS VG Shopping') {
+        if (e[3] == 'MS VG Shopping') {
           psh(vgShoppingData, e)
         }
 
-        if (e[1] == 'MS BARRA DO GARÇAS') {
+        if (e[3] == 'MS BARRA DO GARÇAS') {
           psh(barraData, e)
         }
 
-        if (e[1] == 'MS COUTO') {
+        if (e[3] == 'MS COUTO') {
           psh(coutoData, e)
         }
 
-        if (e[1] == 'MS PRIMAVERA DO LESTE') {
+        if (e[3] == 'MS PRIMAVERA DO LESTE') {
           psh(primaveraData, e)
         }
 
-        if (e[1] == 'MS PONTES E LACERDA') {
+        if (e[3] == 'MS PONTES E LACERDA') {
           psh(pontesData, e)
         }
 
-        if (e[1] == 'MS COLIDER') {
+        if (e[3] == 'MS COLIDER') {
           psh(coliderData, e)
         }
 
-        if (e[1] == 'MS MIRASSOL') {
+        if (e[3] == 'MS MIRASSOL') {
           psh(mirassolData, e)
         }
 
-        if (e[1] == 'MS GUARANTÃ DO NORTE') {
+        if (e[3] == 'MS GUARANTÃ DO NORTE') {
           psh(guarantaData, e)
         }
 
-        if (e[1] == 'MS JACIARA') {
+        if (e[3] == 'MS JACIARA') {
           psh(jaciaraData, e)
         }
 
-        if (e[1] == 'MS COMODORO') {
+        if (e[3] == 'MS COMODORO') {
           psh(comodoroData, e)
         }
 
-        if (e[1] == 'MS ALTO ARAGUAIA') {
+        if (e[3] == 'MS ALTO ARAGUAIA') {
           psh(altoAraguaiaData, e)
         }
 
-        if (e[1] == 'MS ARIQUEMES') {
+        if (e[3] == 'MS ARIQUEMES') {
           psh(ariquemesData, e)
         }
 
-        if (e[1] == 'MS QUERÊNCIA') {
+        if (e[3] == 'MS QUERÊNCIA') {
           psh(querenciaData, e)
         }
 
-        if (e[1] == 'MS JARU') {
+        if (e[3] == 'MS JARU') {
           psh(jaruData, e)
         }
 
-        if (e[1] == 'MS JI-PARANA') {
+        if (e[3] == 'MS JI-PARANA') {
           psh(jiParanaData, e)
         }
 
-        if (e[1] == 'MS PEIXOTO DE AZEVEDO') {
+        if (e[3] == 'MS PEIXOTO DE AZEVEDO') {
           psh(peixotoData, e)
         }
 
-        if (e[1] == 'MS ROLIM DE MOURA') {
+        if (e[3] == 'MS ROLIM DE MOURA') {
           psh(rolimData, e)
         }
 
-        if (e[1] == 'MS PIMENTA BUENO') {
+        if (e[3] == 'MS PIMENTA BUENO') {
           psh(pimentaData, e)
         }
 
-        if (e[1] == 'MS VILHENA') {
+        if (e[3] == 'MS VILHENA') {
           psh(vilhenaData, e)
         }
 
-        if (e[1] == 'MS CACOAL') {
+        if (e[3] == 'MS CACOAL') {
           psh(cacoalData, e)
         }
 
-        if (e[1] == 'MS PV - 07 SETEMBRO') {
+        if (e[3] == 'MS PV - 07 SETEMBRO') {
           psh(setembroData, e)
         }
 
-        if (e[1] == 'MS PV - JATUARANA') {
+        if (e[3] == 'MS PV - JATUARANA') {
           psh(jatuaranaData, e)
         }
 
-        if (e[1] == 'MS PV - JOSE AMADOR') {
+        if (e[3] == 'MS PV - JOSE AMADOR') {
           psh(joseData, e)
         }
 
-        if (e[1] == 'MS CONFRESA') {
+        if (e[3] == 'MS CONFRESA') {
           psh(confresaData, e)
         }
 
-        if (e[1] == 'MS NOVA XAVANTINA') {
+        if (e[3] == 'MS NOVA XAVANTINA') {
           psh(xavantinaData, e)
         }
 
-        if (e[1] == 'MS GO - 24 OUTUBRO') {
+        if (e[3] == 'MS GO - 24 OUTUBRO') {
           psh(vinteQuatroOutubroData, e)
         }
 
-        if (e[1] == 'MS GO - PLAZA DORO') {
+        if (e[3] == 'MS GO - PLAZA DORO') {
           psh(plazaDoroData, e)
         }
       }
